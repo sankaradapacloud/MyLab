@@ -5,6 +5,12 @@ pipeline{
         maven 'maven'
     }
 
+    environment{
+       ArtifactId = readMavenPom().getArtifactId()
+       Version = readMavenPom().getVersion()
+       Name = readMavenPom().getName()
+       GroupId = readMavenPom().getGroupId()
+    }
     stages {
         // Specify various stage with in stages
 
@@ -28,7 +34,19 @@ pipeline{
                 nexusArtifactUploader artifacts: [[artifactId: 'SankarDevOpsLab', classifier: '', file: 'target/SankarDevOpsLab-0.0.5-SNAPSHOT.war', type: 'war']], credentialsId: '9a6c1591-11a8-405c-b947-f5d5cc6530fb', groupId: 'com.sankardevopslab', nexusUrl: '172.20.10.53:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'SankarDevOpsLab-SNAPSHOT', version: '0.0.5-SNAPSHOT'
             }
         }
-        // Stage4 : Deploying
+
+        //Stage 4 : Print some information
+        stage ('Print Environment variables'){
+            steps {
+                echo "Artifact ID is '${ArtifactId}'"
+                echo "Version is '${Version}'"
+                echo "GroupID is '${GroupId}'"
+                echo "Name is '${Name}'"
+
+            }
+        }
+
+        // Stage5 : Deploying
         stage ('Deploy'){
             steps {
                 echo ' deploying......'
