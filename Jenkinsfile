@@ -29,10 +29,11 @@ pipeline{
             }
         }
    
-   /*     //Stage3 : Publish the artifacts to Nexus
+        //Stage3 : Publish the artifacts to Nexus
         stage('Publish to Nexus'){
             steps {
-                script {
+                nexusArtifactUploader artifacts: [[artifactId: 'SankarDevOpsLab', classifier: '', file: 'target/SankarDevOpsLab-0.0.7-SNAPSHOT.war', type: 'war']], credentialsId: 'd6eaf800-f34b-4a47-a973-a4961d8c042b', groupId: 'com.sankardevopslab', nexusUrl: '172.20.10.131:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'SankarDevOpsLab-SNAPSHOT', version: '0.0.7-SNAPSHOT'
+               /* script {
 
                     def NexusRepo = Version.endsWith("SNAPSHOT") ? "SankarDevOpsLab-SNAPSHOT" : "SankarDevOpsLab-RELEASE"
                     nexusArtifactUploader artifacts: 
@@ -47,7 +48,7 @@ pipeline{
                     protocol: 'http', 
                     repository: "${NexusRepo}", 
                     version: "${Version}"
-                }
+                }*/
             }
         }
 
@@ -61,7 +62,7 @@ pipeline{
 
             }
         }
-*/
+
         // Stage5 : Deploying
         stage ('Deploy'){
             steps {
