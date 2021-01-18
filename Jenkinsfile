@@ -5,12 +5,12 @@ pipeline{
         maven 'maven'
     }
 
-    environment{
+   /* environment{
        ArtifactId = readMavenPom().getArtifactId()
        Version = readMavenPom().getVersion()
        Name = readMavenPom().getName()
        GroupId = readMavenPom().getGroupId()
-    }
+    }*/
     stages {
         // Specify various stage with in stages
 
@@ -50,7 +50,7 @@ pipeline{
                 }
             }
         }
-*/
+
         //Stage 4 : Print some information
         stage ('Print Environment variables'){
             steps {
@@ -61,7 +61,7 @@ pipeline{
 
             }
         }
-
+*/
         // Stage5 : Deploying
         stage ('Deploy'){
             steps {
