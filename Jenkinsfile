@@ -33,7 +33,7 @@ pipeline{
         stage('Publish to Nexus'){
             steps {
                 //nexusArtifactUploader artifacts: [[artifactId: 'SankarDevOpsLab', classifier: '', file: 'target/SankarDevOpsLab-0.0.7-SNAPSHOT.war', type: 'war']], credentialsId: 'd0d71460-cc7f-4aba-adba-0d037cc47592', groupId: 'com.sankardevopslab', nexusUrl: '172.20.10.82:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'SankarDevOpsLab-SNAPSHOT', version: '0.0.7-SNAPSHOT'
-                nexusArtifactUploader artifacts: [[artifactId: 'SankarDevOpsLab', classifier: '', file: 'target/SankarDevOpsLab-0.0.7.war', type: 'war']], credentialsId: 'd0d71460-cc7f-4aba-adba-0d037cc47592', groupId: 'com.sankardevopslab', nexusUrl: '172.20.10.82:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'SankarDevOpsLab-RELEASE', version: '0.0.7'
+                nexusArtifactUploader artifacts: [[artifactId: 'SankarDevOpsLab', classifier: '', file: 'target/SankarDevOpsLab-0.0.8-SNAPSHOT.war', type: 'war']], credentialsId: 'd0d71460-cc7f-4aba-adba-0d037cc47592', groupId: 'com.sankardevopslab', nexusUrl: '172.20.10.82:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'SankarDevOpsLab-RELEASE', version: '0.0.8-SNAPSHOT'
                 script {
 
                     def NexusRepo = Version.endsWith("SNAPSHOT") ? "SankarDevOpsLab-SNAPSHOT" : "SankarDevOpsLab-RELEASE"
