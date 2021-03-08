@@ -53,6 +53,7 @@
     <div class="container">
         <h1>Hello</h1>
         <p>This is Sankar's DevOps AWS Lab 08/03/2021</p>
+        <p>Ansible playbook auto run test</p>
         <p><a class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p>
         <p><a class="btn btn-primary btn-lg" role="button">Demo v17 - Sankar!! more &raquo;</a></p>
     </div>
