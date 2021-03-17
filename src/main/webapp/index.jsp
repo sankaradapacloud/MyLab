@@ -52,7 +52,7 @@
 <div class="jumbotron">
     <div class="container">
         <h1>Hello</h1>
-        <p>This is Sankar's DevOps AWS Lab 17/03/2021 AB</p>
+        <p>This is Sankar's DevOps AWS Lab 17/03/2021 ABC</p>
         <p>Create Docker Image and host Docker Container using Ansible playbook - test</p>
         <p><a class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p>
         <p><a class="btn btn-primary btn-lg" role="button">Demo v17 - Sankar!! more &raquo;</a></p>
