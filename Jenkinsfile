@@ -5,12 +5,12 @@ pipeline{
         maven 'maven'
     }
 
-    environment{
-       ArtifactId = readMavenPom().getArtifactId()
-       Version = readMavenPom().getVersion()
-       Name = readMavenPom().getName()
-       GroupId = readMavenPom().getGroupId()
-    }
+   // environment{
+    //   ArtifactId = readMavenPom().getArtifactId()
+    //   Version = readMavenPom().getVersion()
+    //   Name = readMavenPom().getName()
+   //    GroupId = readMavenPom().getGroupId()
+   // }
     stages {
         // Specify various stage with in stages
 
