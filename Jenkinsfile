@@ -31,7 +31,17 @@ pipeline{
    
         stage ('Publish the artifacts to Nexus'){
             steps {
-                nexusArtifactUploader artifacts: [[artifactId: 'mylab', classifier: '', file: 'target/mylab-0.1.1-SNAPSHOT.war', type: 'war']], credentialsId: '512e6e02-2da7-4767-945b-6eff3ae086c7', groupId: 'com.sankardevopslab', nexusUrl: '172.20.10.10:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'Sankaradapa-SNAPSHOT', version: '0.1.1-SNAPSHOT'
+                nexusArtifactUploader artifacts: [[artifactId: "${ArtifactId}", 
+                    classifier: '', 
+                    file: 'target/mylab-0.1.1-SNAPSHOT.war', 
+                    type: 'war']], 
+                    credentialsId: '512e6e02-2da7-4767-945b-6eff3ae086c7', 
+                    groupId: "${GroupId}", 
+                    nexusUrl: '172.20.10.10:8081', 
+                    nexusVersion: 'nexus3', 
+                    protocol: 'http', 
+                    repository: 'Sankaradapa-SNAPSHOT', 
+                    version: "${Version}"
                 //nexusArtifactUploader artifacts: [[artifactId: 'mylab', classifier: '', file: 'target/mylab-0.1.1-SNAPSHOT.war', type: 'war']], credentialsId: 'd72ed1b0-e5fd-4f05-b8e0-5bd6c234f0fe', groupId: 'com.sankardevopslab', nexusUrl: '172.20.10.187:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'sankar-SNAPSHOT', version: '0.1.1-SNAPSHOT'
                 //nexusArtifactUploader artifacts: [[artifactId: 'mylab', classifier: '', file: 'target/mylab.war', type: 'war']], credentialsId: 'd72ed1b0-e5fd-4f05-b8e0-5bd6c234f0fe', groupId: 'com.sankardevopslab', nexusUrl: '172.20.10.187:8081', nexusVersion: 'nexus2', protocol: 'http', repository: 'sankar-SNAPSHOT', version: '0.1.0-SNAPSHOT'
                 //nexusArtifactUploader artifacts: [[artifactId: 'mylab', classifier: '', file: 'target/mylab.war', type: 'war']], credentialsId: 'd72ed1b0-e5fd-4f05-b8e0-5bd6c234f0fe', groupId: 'com.sankardevopslab', nexusUrl: '172.20.10.187:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'sankar-SNAPSHOT', version: '0.1.0-SNAPSHOT'
