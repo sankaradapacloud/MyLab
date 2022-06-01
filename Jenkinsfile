@@ -29,7 +29,7 @@ pipeline{
             }
         }
    
-        stage ('Publish the artifacts to Nexus'){
+       /* stage ('Publish the artifacts to Nexus'){
             steps {
                 //nexusArtifactUploader artifacts: [[artifactId: 'mylab', classifier: '', file: 'target/mylab-0.1.1-SNAPSHOT.war', type: 'war']], credentialsId: 'd72ed1b0-e5fd-4f05-b8e0-5bd6c234f0fe', groupId: 'com.sankardevopslab', nexusUrl: '172.20.10.187:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'sankar-SNAPSHOT', version: '0.1.1-SNAPSHOT'
                 //nexusArtifactUploader artifacts: [[artifactId: 'mylab', classifier: '', file: 'target/mylab.war', type: 'war']], credentialsId: 'd72ed1b0-e5fd-4f05-b8e0-5bd6c234f0fe', groupId: 'com.sankardevopslab', nexusUrl: '172.20.10.187:8081', nexusVersion: 'nexus2', protocol: 'http', repository: 'sankar-SNAPSHOT', version: '0.1.0-SNAPSHOT'
@@ -39,7 +39,7 @@ pipeline{
                 //nexusArtifactUploader artifacts: [[artifactId: 'mylab', classifier: '', file: 'target/mylab.war', type: 'war']], credentialsId: '340fbd9d-f1bf-4f64-8a59-3bf4b8e24176', groupId: 'com.sankardevopslab', nexusUrl: '172.20.10.119:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'mySample-snapshot', version: '0.0.1'
             }
             
-        }
+        }*/
         
         // Stage3 : Testing
         stage ('Deploy'){
