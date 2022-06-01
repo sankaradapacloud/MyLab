@@ -35,7 +35,7 @@ pipeline{
                     def NexusRepo = Version.endsWith("SNAPSHOT") ? "Sankaradapa-SNAPSHOT" : "sankaradapa-RELEASE"
                 nexusArtifactUploader artifacts: [[artifactId: "${ArtifactId}", 
                     classifier: '', 
-                    file: 'target/mylab-0.1.1-SNAPSHOT.war', 
+                    file: "target/${ArtifactId}-${Version}.war", 
                     type: 'war']], 
                     credentialsId: '512e6e02-2da7-4767-945b-6eff3ae086c7', 
                     groupId: "${GroupId}", 
