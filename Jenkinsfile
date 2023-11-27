@@ -5,12 +5,14 @@ pipeline{
         maven 'maven'
     }
 
-    environment{
+   /* 
+   environment{
        ArtifactId = readMavenPom().getArtifactId()
        Version = readMavenPom().getVersion()
        Name = readMavenPom().getName()
        GroupId = readMavenPom().getGroupId()
     }
+    */
     stages {
         // Specify various stage with in stages
 
@@ -29,6 +31,7 @@ pipeline{
             }
         }
    
+   /*
         stage ('Publish the artifacts to Nexus'){
             steps {
                 script {
@@ -65,6 +68,8 @@ pipeline{
                 
             }
         }
+
+        */
         // Stage3 : Testing
         stage ('Deploy'){
             steps {
